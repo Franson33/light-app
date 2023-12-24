@@ -1,0 +1,28 @@
+{
+  "modules": {
+    "NativeFrnCamera": {
+      "type": "NativeModule",
+      "aliasMap": {},
+      "enumMap": {},
+      "spec": {
+        "properties": [
+          {
+            "name": "captureImage",
+            "optional": false,
+            "typeAnnotation": {
+              "type": "FunctionTypeAnnotation",
+              "returnTypeAnnotation": {
+                "type": "PromiseTypeAnnotation",
+                "elementType": {
+                  "type": "GenericObjectTypeAnnotation"
+                }
+              },
+              "params": []
+            }
+          }
+        ]
+      },
+      "moduleName": "RTNFrCamera"
+    }
+  }
+}

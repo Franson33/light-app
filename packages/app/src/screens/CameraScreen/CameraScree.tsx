@@ -1,9 +1,8 @@
 import React, {FC} from 'react';
 import {View, Text, Button, StyleSheet, Alert} from 'react-native';
 
-import RTNFrCamera from 'rtn-fr-camera/js/NativeFrnCamera';
-
 import {theme} from '../../theme/theme';
+import RTNFrCamera from 'rtn-fr-camera/js/NativeFrnCamera';
 
 interface CameraScreenProps {}
 

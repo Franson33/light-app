@@ -17,15 +17,11 @@ const config = {
   resolver: {
     assetExts: assetExts.filter(ext => ext !== 'svg'),
     sourceExts: [...sourceExts, 'svg'],
-    extraNodeModules: {
-      '@react-native-community/cli': path.resolve(
-        __dirname,
-        'node_modules',
-        '@react-native-community/cli',
-      ),
-    },
   },
-  watchFolders: [path.resolve(__dirname, '../../node_modules')],
+  watchFolders: [
+    path.resolve(__dirname, '../../node_modules'),
+    path.resolve(__dirname, '../../node_modules/rtn-fr-camera'),
+  ],
 };
 
 module.exports = mergeConfig(defaultConfig, config);
