@@ -1,0 +1,43 @@
+{
+  "name": "rtn-fr-camera",
+  "version": "0.0.1",
+  "description": "Make a picture with your phone camera",
+  "react-native": "js/index",
+  "source": "js/index",
+  "files": [
+    "js",
+    "android",
+    "ios",
+    "rtn-fr-camera.podspec",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "repository": "https://github.com/Franson33/rtn-fr-camera",
+  "author": "Franson33 antonchikfr@google.com (https://github.com/Franson33)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Franson33/rtn-fr-camera/issues"
+  },
+  "homepage": "https://github.com/Franson33/rtn-fr-camera#readme",
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "codegenConfig": {
+    "name": "RTNFrCameraSpec",
+    "type": "modules",
+    "jsSrcsDir": "js",
+    "android": {
+      "javaPackageName": "com.rtnfrcamera"
+    }
+  }
+}
