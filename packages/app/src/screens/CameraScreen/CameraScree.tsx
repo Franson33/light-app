@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-between',
-    padding: theme.scale(15),
+    padding: theme.scale(theme.space.Medium),
   },
 });

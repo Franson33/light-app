@@ -6,7 +6,6 @@ import {
   StyleSheet,
 } from 'react-native';
 import {SvgProps} from 'react-native-svg';
-import {scale} from 'react-native-size-matters';
 
 import {theme} from '../../theme/theme';
 
@@ -17,7 +16,7 @@ interface ITileButtonProps {
 }
 
 export const TileButton: FC<ITileButtonProps> = ({Icon, iconSize, onPress}) => {
-  const size = iconSize ? scale(iconSize) : scale(85);
+  const size = iconSize ? theme.scale(iconSize) : theme.scale(85);
 
   const styleHandler = (state: PressableStateCallbackType) => [
     state.pressed ? styles.buttonPressed : styles.buttonUnpressed,
@@ -33,11 +32,11 @@ export const TileButton: FC<ITileButtonProps> = ({Icon, iconSize, onPress}) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: scale(100),
-    height: scale(100),
+    width: theme.scale(100),
+    height: theme.scale(100),
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: scale(5),
+    borderRadius: theme.scale(theme.space.Smallest),
     backgroundColor: '#fff',
   },
   buttonPressed: {
