@@ -7,6 +7,34 @@
       "spec": {
         "properties": [
           {
+            "name": "startCameraPreview",
+            "optional": false,
+            "typeAnnotation": {
+              "type": "FunctionTypeAnnotation",
+              "returnTypeAnnotation": {
+                "type": "PromiseTypeAnnotation",
+                "elementType": {
+                  "type": "GenericObjectTypeAnnotation"
+                }
+              },
+              "params": []
+            }
+          },
+          {
+            "name": "stopCameraPreview",
+            "optional": false,
+            "typeAnnotation": {
+              "type": "FunctionTypeAnnotation",
+              "returnTypeAnnotation": {
+                "type": "PromiseTypeAnnotation",
+                "elementType": {
+                  "type": "GenericObjectTypeAnnotation"
+                }
+              },
+              "params": []
+            }
+          },
+          {
             "name": "captureImage",
             "optional": false,
             "typeAnnotation": {

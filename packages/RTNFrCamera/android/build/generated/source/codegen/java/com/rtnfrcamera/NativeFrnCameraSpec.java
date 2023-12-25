@@ -34,5 +34,13 @@ public abstract class NativeFrnCameraSpec extends ReactContextBaseJavaModule imp
 
   @ReactMethod
   @DoNotStrip
+  public abstract void startCameraPreview(Promise promise);
+
+  @ReactMethod
+  @DoNotStrip
+  public abstract void stopCameraPreview(Promise promise);
+
+  @ReactMethod
+  @DoNotStrip
   public abstract void captureImage(Promise promise);
 }

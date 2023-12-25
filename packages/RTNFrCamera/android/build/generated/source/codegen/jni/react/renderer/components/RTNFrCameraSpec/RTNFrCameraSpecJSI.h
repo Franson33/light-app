@@ -21,6 +21,8 @@ protected:
   NativeFrnCameraCxxSpecJSI(std::shared_ptr<CallInvoker> jsInvoker);
 
 public:
+  virtual jsi::Value startCameraPreview(jsi::Runtime &rt) = 0;
+  virtual jsi::Value stopCameraPreview(jsi::Runtime &rt) = 0;
   virtual jsi::Value captureImage(jsi::Runtime &rt) = 0;
 
 };
@@ -45,6 +47,22 @@ private:
     Delegate(T *instance, std::shared_ptr<CallInvoker> jsInvoker) :
       NativeFrnCameraCxxSpecJSI(std::move(jsInvoker)), instance_(instance) {}
 
+    jsi::Value startCameraPreview(jsi::Runtime &rt) override {
+      static_assert(
+          bridging::getParameterCount(&T::startCameraPreview) == 1,
+          "Expected startCameraPreview(...) to have 1 parameters");
+
+      return bridging::callFromJs<jsi::Value>(
+          rt, &T::startCameraPreview, jsInvoker_, instance_);
+    }
+    jsi::Value stopCameraPreview(jsi::Runtime &rt) override {
+      static_assert(
+          bridging::getParameterCount(&T::stopCameraPreview) == 1,
+          "Expected stopCameraPreview(...) to have 1 parameters");
+
+      return bridging::callFromJs<jsi::Value>(
+          rt, &T::stopCameraPreview, jsInvoker_, instance_);
+    }
     jsi::Value captureImage(jsi::Runtime &rt) override {
       static_assert(
           bridging::getParameterCount(&T::captureImage) == 1,

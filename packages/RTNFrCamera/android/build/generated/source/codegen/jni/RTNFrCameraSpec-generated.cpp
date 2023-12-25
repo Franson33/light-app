@@ -13,6 +13,16 @@
 namespace facebook {
 namespace react {
 
+static facebook::jsi::Value __hostFunction_NativeFrnCameraSpecJSI_startCameraPreview(facebook::jsi::Runtime& rt, TurboModule &turboModule, const facebook::jsi::Value* args, size_t count) {
+  static jmethodID cachedMethodId = nullptr;
+  return static_cast<JavaTurboModule &>(turboModule).invokeJavaMethod(rt, PromiseKind, "startCameraPreview", "(Lcom/facebook/react/bridge/Promise;)V", args, count, cachedMethodId);
+}
+
+static facebook::jsi::Value __hostFunction_NativeFrnCameraSpecJSI_stopCameraPreview(facebook::jsi::Runtime& rt, TurboModule &turboModule, const facebook::jsi::Value* args, size_t count) {
+  static jmethodID cachedMethodId = nullptr;
+  return static_cast<JavaTurboModule &>(turboModule).invokeJavaMethod(rt, PromiseKind, "stopCameraPreview", "(Lcom/facebook/react/bridge/Promise;)V", args, count, cachedMethodId);
+}
+
 static facebook::jsi::Value __hostFunction_NativeFrnCameraSpecJSI_captureImage(facebook::jsi::Runtime& rt, TurboModule &turboModule, const facebook::jsi::Value* args, size_t count) {
   static jmethodID cachedMethodId = nullptr;
   return static_cast<JavaTurboModule &>(turboModule).invokeJavaMethod(rt, PromiseKind, "captureImage", "(Lcom/facebook/react/bridge/Promise;)V", args, count, cachedMethodId);
@@ -20,6 +30,8 @@ static facebook::jsi::Value __hostFunction_NativeFrnCameraSpecJSI_captureImage(f
 
 NativeFrnCameraSpecJSI::NativeFrnCameraSpecJSI(const JavaTurboModule::InitParams &params)
   : JavaTurboModule(params) {
+  methodMap_["startCameraPreview"] = MethodMetadata {0, __hostFunction_NativeFrnCameraSpecJSI_startCameraPreview};
+  methodMap_["stopCameraPreview"] = MethodMetadata {0, __hostFunction_NativeFrnCameraSpecJSI_stopCameraPreview};
   methodMap_["captureImage"] = MethodMetadata {0, __hostFunction_NativeFrnCameraSpecJSI_captureImage};
 }
 

@@ -12,6 +12,16 @@
 namespace facebook {
 namespace react {
 
+static jsi::Value __hostFunction_NativeFrnCameraCxxSpecJSI_startCameraPreview(jsi::Runtime &rt, TurboModule &turboModule, const jsi::Value* args, size_t count) {
+  return static_cast<NativeFrnCameraCxxSpecJSI *>(&turboModule)->startCameraPreview(
+    rt
+  );
+}
+static jsi::Value __hostFunction_NativeFrnCameraCxxSpecJSI_stopCameraPreview(jsi::Runtime &rt, TurboModule &turboModule, const jsi::Value* args, size_t count) {
+  return static_cast<NativeFrnCameraCxxSpecJSI *>(&turboModule)->stopCameraPreview(
+    rt
+  );
+}
 static jsi::Value __hostFunction_NativeFrnCameraCxxSpecJSI_captureImage(jsi::Runtime &rt, TurboModule &turboModule, const jsi::Value* args, size_t count) {
   return static_cast<NativeFrnCameraCxxSpecJSI *>(&turboModule)->captureImage(
     rt
@@ -20,6 +30,8 @@ static jsi::Value __hostFunction_NativeFrnCameraCxxSpecJSI_captureImage(jsi::Run
 
 NativeFrnCameraCxxSpecJSI::NativeFrnCameraCxxSpecJSI(std::shared_ptr<CallInvoker> jsInvoker)
   : TurboModule("RTNFrCamera", jsInvoker) {
+  methodMap_["startCameraPreview"] = MethodMetadata {0, __hostFunction_NativeFrnCameraCxxSpecJSI_startCameraPreview};
+  methodMap_["stopCameraPreview"] = MethodMetadata {0, __hostFunction_NativeFrnCameraCxxSpecJSI_stopCameraPreview};
   methodMap_["captureImage"] = MethodMetadata {0, __hostFunction_NativeFrnCameraCxxSpecJSI_captureImage};
 }
 
