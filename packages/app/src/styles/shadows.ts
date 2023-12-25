@@ -6,14 +6,14 @@ export interface IIOSShadow {
   elevation?: number;
 }
 
-export interface IShadow {
+interface IShadow {
   android: IIOSShadow | undefined;
   ios: IIOSShadow | undefined;
 }
 
-export type ShadowName = 'none' | 'small' | 'middle';
+type ShadowName = 'none' | 'small' | 'middle';
 
-export type IShadowSizes = Record<ShadowName, IShadow>;
+type IShadowSizes = Record<ShadowName, IShadow>;
 
 export const shadowSizes: IShadowSizes = {
   none: {

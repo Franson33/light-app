@@ -10,5 +10,3 @@ export const spacing = {
   XXLarge: 96,
   Massive: 192,
 } as const;
-
-export type ISpacing = typeof spacing;

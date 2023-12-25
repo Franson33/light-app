@@ -1,10 +1,5 @@
 import React, {FC} from 'react';
-import {
-  Platform,
-  Pressable,
-  PressableStateCallbackType,
-  StyleSheet,
-} from 'react-native';
+import {Pressable, PressableStateCallbackType, StyleSheet} from 'react-native';
 import {SvgProps} from 'react-native-svg';
 
 import {theme} from '../../theme/theme';
@@ -36,18 +31,14 @@ const styles = StyleSheet.create({
     height: theme.scale(100),
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: theme.scale(theme.space.Smallest),
+    borderRadius: 10,
     backgroundColor: '#fff',
   },
   buttonPressed: {
     opacity: 0.9,
-    ...Platform.select({
-      ...theme.shadows.small,
-    }),
+    ...theme.shadowSmall,
   },
   buttonUnpressed: {
-    ...Platform.select({
-      ...theme.shadows.middle,
-    }),
+    ...theme.shadowMiddle,
   },
 });

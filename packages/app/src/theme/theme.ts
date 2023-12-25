@@ -1,21 +1,14 @@
+import {Platform} from 'react-native';
+
 import {
   scale,
   verticalScale,
   moderateScale,
   moderateVerticalScale,
 } from 'react-native-size-matters';
-import {spacing, shadowSizes, IShadowSizes, ISpacing} from '../styles';
+import {spacing, shadowSizes} from '../styles';
 
-type ScaleFunction = (size: number) => number;
-
-interface Theme {
-  scale: ScaleFunction;
-  verticalScale: ScaleFunction;
-  moderateScale: ScaleFunction;
-  moderateVerticalScale: ScaleFunction;
-  space: ISpacing;
-  shadows: IShadowSizes;
-}
+import {Theme} from './types';
 
 export const theme: Theme = {
   // Functions from react-native-size-matters
@@ -23,7 +16,33 @@ export const theme: Theme = {
   verticalScale,
   moderateScale,
   moderateVerticalScale,
-  // Constants from ./styles folder
-  space: spacing,
-  shadows: shadowSizes,
+
+  // Platform specific shadows
+  shadowNone: {
+    ...Platform.select({
+      ...shadowSizes.none,
+    }),
+  },
+  shadowSmall: {
+    ...Platform.select({
+      ...shadowSizes.small,
+    }),
+  },
+  shadowMiddle: {
+    ...Platform.select({
+      ...shadowSizes.middle,
+    }),
+  },
+
+  // Scaled spacing sizes
+  none: spacing.None,
+  auto: spacing.Auto,
+  miniscule: scale(spacing.Miniscule),
+  smallest: scale(spacing.Smallest),
+  small: scale(spacing.Small),
+  medium: scale(spacing.Medium),
+  large: scale(spacing.Large),
+  xlarge: scale(spacing.XLarge),
+  xxlarge: scale(spacing.XXLarge),
+  massive: scale(spacing.Massive),
 };

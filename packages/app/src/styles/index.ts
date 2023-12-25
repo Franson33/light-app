@@ -1,2 +1,3 @@
-export {spacing, ISpacing} from './spacing';
-export {shadowSizes, IShadowSizes} from './shadows';
+export {spacing} from './spacing';
+export {shadowSizes} from './shadows';
+export type {IIOSShadow} from './shadows';
