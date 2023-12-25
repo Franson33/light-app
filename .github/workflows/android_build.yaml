@@ -35,7 +35,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: cd packages/app && yarn install --frozen-lockfile
 
       ## Configure cache for gradle to reduce build time
       - name: Cache Gradle Wrapper
