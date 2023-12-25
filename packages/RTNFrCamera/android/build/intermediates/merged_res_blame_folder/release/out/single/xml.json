@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "com.rtnfrcamera.rtn-fr-camera-merged_res-24:/xml/rn_dev_preferences.xml",
+        "source": "com.rtnfrcamera.rtn-fr-camera-jetified-react-android-0.73.1-release-16:/xml/rn_dev_preferences.xml"
+    }
+]
