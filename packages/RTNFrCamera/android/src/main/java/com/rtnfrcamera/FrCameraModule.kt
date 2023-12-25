@@ -39,6 +39,16 @@ class FrCameraModule(reactContext: ReactApplicationContext) : NativeFrnCameraSpe
         }, executor)
     }
 
+    override fun stopCameraPreview(promise: Promise) {
+        try {
+            lifecycleOwner.stop()
+            promise.resolve("Camera preview stopped")
+        } catch (exc: Exepton) {
+            promise.reject("ERROR", exc)
+        }
+
+    }
+
     override fun captureImage(promise: Promise) {
         return promise.resolve("Look mom, its from Kotlin!") 
     }

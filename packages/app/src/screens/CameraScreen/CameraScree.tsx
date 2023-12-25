@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import {View, Text, Button, StyleSheet, Alert} from 'react-native';
 
 import {theme} from '../../theme/theme';
@@ -7,6 +7,16 @@ import RTNFrCamera from 'rtn-fr-camera/js/NativeFrnCamera';
 interface CameraScreenProps {}
 
 export const CameraScreen: FC<CameraScreenProps> = () => {
+  useEffect(() => {
+    const clearPreview = async () => {
+      await RTNFrCamera?.stopCameraPreview();
+    };
+
+    return () => {
+      clearPreview();
+    };
+  }, []);
+
   const pressHandler = async () => {
     const message = await RTNFrCamera?.captureImage();
     Alert.alert(message);
