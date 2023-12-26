@@ -34,10 +34,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      # Debug step, remove later!!
-      - name: List modules
-        run: echo "IN CACHE, BEFORE INSTALL" && ls -la | grep rtn
-
       - name: Install dependencies
         run: cd packages/app && yarn install
 
