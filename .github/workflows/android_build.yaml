@@ -39,7 +39,7 @@ jobs:
 
       # Debug step, remove later!!
       - name: List modules
-        run: echo "AFTER INSTALL" && ls -la | grep rtn
+        run: echo "AFTER INSTALL" && cd ./node_modules && ls | grep rtn
 
       ## Configure cache for gradle to reduce build time
       - name: Cache Gradle Wrapper
