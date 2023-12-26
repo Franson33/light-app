@@ -16,7 +16,7 @@
 namespace facebook {
 namespace react {
 
-
+using RTNCameraPreviewComponentDescriptor = ConcreteComponentDescriptor<RTNCameraPreviewShadowNode>;
 
 } // namespace react
 } // namespace facebook

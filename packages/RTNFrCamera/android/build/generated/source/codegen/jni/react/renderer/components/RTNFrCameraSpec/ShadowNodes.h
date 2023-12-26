@@ -19,7 +19,16 @@
 namespace facebook {
 namespace react {
 
+JSI_EXPORT extern const char RTNCameraPreviewComponentName[];
 
+/*
+ * `ShadowNode` for <RTNCameraPreview> component.
+ */
+using RTNCameraPreviewShadowNode = ConcreteViewShadowNode<
+    RTNCameraPreviewComponentName,
+    RTNCameraPreviewProps,
+    RTNCameraPreviewEventEmitter,
+    RTNCameraPreviewState>;
 
 } // namespace react
 } // namespace facebook

@@ -23,6 +23,22 @@
         ]
       },
       "moduleName": "RTNFrCamera"
+    },
+    "RTNCameraPreview": {
+      "type": "Component",
+      "components": {
+        "RTNCameraPreview": {
+          "extendsProps": [
+            {
+              "type": "ReactNativeBuiltInType",
+              "knownTypeName": "ReactNativeCoreViewProps"
+            }
+          ],
+          "events": [],
+          "props": [],
+          "commands": []
+        }
+      }
     }
   }
 }

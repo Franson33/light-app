@@ -9,12 +9,21 @@
  */
 #pragma once
 
-
+#include <react/renderer/components/view/ViewProps.h>
+#include <react/renderer/core/PropsParserContext.h>
 
 namespace facebook {
 namespace react {
 
+class RTNCameraPreviewProps final : public ViewProps {
+ public:
+  RTNCameraPreviewProps() = default;
+  RTNCameraPreviewProps(const PropsParserContext& context, const RTNCameraPreviewProps &sourceProps, const RawProps &rawProps);
 
+#pragma mark - Props
+
+  
+};
 
 } // namespace react
 } // namespace facebook

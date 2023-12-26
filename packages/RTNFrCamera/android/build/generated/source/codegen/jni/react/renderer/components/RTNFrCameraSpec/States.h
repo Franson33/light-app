@@ -17,7 +17,20 @@
 namespace facebook {
 namespace react {
 
+class RTNCameraPreviewState {
+public:
+  RTNCameraPreviewState() = default;
 
+#ifdef ANDROID
+  RTNCameraPreviewState(RTNCameraPreviewState const &previousState, folly::dynamic data){};
+  folly::dynamic getDynamic() const {
+    return {};
+  };
+  MapBuffer getMapBuffer() const {
+    return MapBufferBuilder::EMPTY();
+  };
+#endif
+};
 
 } // namespace react
 } // namespace facebook

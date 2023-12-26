@@ -13,7 +13,7 @@
 namespace facebook {
 namespace react {
 
-
+extern const char RTNCameraPreviewComponentName[] = "RTNCameraPreview";
 
 } // namespace react
 } // namespace facebook

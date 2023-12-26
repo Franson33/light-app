@@ -14,6 +14,12 @@
 
 namespace facebook {
 namespace react {
+class RTNCameraPreviewEventEmitter : public ViewEventEmitter {
+ public:
+  using ViewEventEmitter::ViewEventEmitter;
 
+  
+  
+};
 } // namespace react
 } // namespace facebook

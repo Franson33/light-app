@@ -15,7 +15,13 @@
 namespace facebook {
 namespace react {
 
+RTNCameraPreviewProps::RTNCameraPreviewProps(
+    const PropsParserContext &context,
+    const RTNCameraPreviewProps &sourceProps,
+    const RawProps &rawProps): ViewProps(context, sourceProps, rawProps)
 
+    
+      {}
 
 } // namespace react
 } // namespace facebook

@@ -6,8 +6,6 @@ import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.module.model.ReactModuleInfo
 import com.facebook.react.module.model.ReactModuleInfoProvider
 
-
-
 class FrCameraPackage : TurboReactPackage() {
   override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? =
     if (name == FrCameraModule.NAME) {
@@ -29,5 +27,7 @@ class FrCameraPackage : TurboReactPackage() {
       )
     )
   }
+
+
 }
 
