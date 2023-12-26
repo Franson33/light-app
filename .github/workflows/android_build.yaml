@@ -37,10 +37,6 @@ jobs:
       - name: Install dependencies
         run: cd packages/app && yarn install
 
-      # Debug step, remove later!!
-      - name: List modules
-        run: echo "AFTER INSTALL" && cd ./node_modules && ls | grep rtn
-
       ## Configure cache for gradle to reduce build time
       - name: Cache Gradle Wrapper
         uses: actions/cache@v3
