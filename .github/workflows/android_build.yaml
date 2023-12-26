@@ -21,21 +21,21 @@ jobs:
           distribution: "zulu"
           java-version: "17"
 
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+      # - name: Get yarn cache directory path
+      #   id: yarn-cache-dir-path
+      #   run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - name: Restore node_modules from cache
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+      # - name: Restore node_modules from cache
+      #   uses: actions/cache@v3
+      #   id: yarn-cache
+      #   with:
+      #     path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+      #     key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: cd packages/app && yarn install
+        run: yarn install --frozen-lockfile
 
       ## Configure cache for gradle to reduce build time
       - name: Cache Gradle Wrapper
@@ -53,7 +53,6 @@ jobs:
             ${{ runner.os }}-gradle-cache-
 
       - name: Make Gradle Executable
-        # run: cd android && chmod +x ./gradle
         run: cd packages/app/android && chmod +x ./gradlew
 
       - name: Generate APK
