@@ -37,20 +37,20 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      ## Configure cache for gradle to reduce build time
-      - name: Cache Gradle Wrapper
-        uses: actions/cache@v3
-        with:
-          path: ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+      # ## Configure cache for gradle to reduce build time
+      # - name: Cache Gradle Wrapper
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: ~/.gradle/wrapper
+      #     key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
 
-      - name: Cache Gradle Dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-caches-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-cache-
+      # - name: Cache Gradle Dependencies
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: ~/.gradle/caches
+      #     key: ${{ runner.os }}-gradle-caches-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-gradle-cache-
 
       - name: Make Gradle Executable
         run: cd packages/app/android && chmod +x ./gradlew
