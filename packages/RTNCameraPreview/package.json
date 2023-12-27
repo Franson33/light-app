@@ -1,0 +1,40 @@
+{
+  "name": "rtn-camera-preview",
+  "version": "0.0.1",
+  "description": "Android SurfaceView to show camera preview.",
+  "react-native": "js/index",
+  "source": "js/index",
+  "files": [
+    "js",
+    "android",
+    "ios",
+    "rtn-camera-preview.podspec",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "repository": "https://github.com/Franson33/rtn-camera-preview",
+  "author": "Franson33 antonchikfr@google.com (https://github.com/Franson33)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Franson33/rtn-camera-preview/issues"
+  },
+  "homepage": "https://github.com/Franson33/rtn-camera-preview#readme",
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "codegenConfig": {
+    "name": "RTNCameraPreviewSpec",
+    "type": "components",
+    "jsSrcsDir": "js"
+  }
+}
