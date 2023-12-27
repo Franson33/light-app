@@ -21,6 +21,7 @@ const config = {
   watchFolders: [
     path.resolve(__dirname, '../../node_modules'),
     path.resolve(__dirname, '../../node_modules/rtn-fr-camera'),
+    path.resolve(__dirname, '../../node_modules/rtn-camera-preview'),
   ],
 };
 
