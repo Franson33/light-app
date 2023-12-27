@@ -10,8 +10,8 @@ import com.facebook.react.viewmanagers.RTNCameraPreviewManagerInterface
 import com.facebook.react.viewmanagers.RTNCameraPreviewManagerDelegate
 
 @ReactModule(name = CameraPreviewManager.NAME)
-class CameraPreviewManager(context: ReactApplicationContext) : SimpleViewManager<CameraPreview>(), RTNCameraPreviewManagerInterface<CameraPreview> (
-  private val delegate: RTNCameraPreviewManagerDelegate<CameraPreview> = RTNCameraPreviewManagerDelegate(this)
+class CameraPreviewManager(context: ReactApplicationContext) : SimpleViewManager<CameraPreview>(), RTNCameraPreviewManagerInterface<CameraPreview> {
+  private val delegate = RTNCameraPreviewManagerDelegate(this)
 
   override fun getDelegate(): ViewManagerDelegate<CameraPreview> = delegate
 
@@ -20,6 +20,6 @@ class CameraPreviewManager(context: ReactApplicationContext) : SimpleViewManager
   override fun createViewInstance(context: ThemedReactContext): CameraPreview = CameraPreview(context)
 
   companion object {
-    const val NAME = 'RTNCameraPreview'
+    const val NAME = "RTNCameraPreview"
   }
-)
+}

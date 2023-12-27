@@ -2,6 +2,8 @@ package rtnfrcamera
 
 import android.content.Context
 import android.graphics.Color
+import android.view.SurfaceView
+import android.util.AttributeSet
 
 class CameraPreview : SurfaceView {
   constructor(context: Context?) : super(context) {
